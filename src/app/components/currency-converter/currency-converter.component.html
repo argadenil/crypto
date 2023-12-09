@@ -1,0 +1,69 @@
+<div class="currency-converter-container">
+    <div class="converter-container">
+        <div class="currency-converter-form">
+            <form [formGroup]="currencyConveterForm">
+                <div class="container" id="converter-container"
+                    style="height: 40vh;display: flex; justify-content: center;flex-direction: column;">
+                    <div class="row">
+                        <div class="col-sm" style="text-align: center;">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Amount</mat-label>
+                                <input matInput placeholder="" formControlName="amount" type="number" class="no-spin">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm" style="text-align: center;">
+                            <mat-form-field>
+                                <mat-label>From</mat-label>
+                                <mat-select formControlName="fromCurrency">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label></mat-label>
+                                        <input matInput placeholder="Search">
+                                    </mat-form-field>
+                                    @for (c of currencyList; track c) {
+                                    <mat-option [value]="c">{{c.name}}</mat-option>
+                                    }
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm" style="text-align: center;">
+                            <mat-form-field>
+                                <mat-label>To</mat-label>
+                                <mat-select formControlName="toCurrency">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label></mat-label>
+                                        <input matInput placeholder="Search">
+                                    </mat-form-field>
+                                    @for (c of currencyList; track c) {
+                                    <mat-option [value]="c">{{c.name}}</mat-option>
+                                    }
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+
+                        </div>
+                        <div class="col-sm">
+
+                        </div>
+                        <div class="col-sm" style="text-align: center;">
+                            <button mat-raised-button color="primary" [disabled]="currencyConveterForm.invalid"
+                                (click)="convertCurrency()">Convert</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8" style="text-align: center;">
+                            <div class="collapsible" [@collapse]="collapsed">
+                                <span style="font-size: medium;font-weight: bold;">{{currencyConveterForm.controls['amount'].value }}</span> &nbsp; <span>{{currencyConveterForm.controls['fromCurrency'].value.name_full}}</span> = <span style="font-size: medium;font-weight: bold;">43,213.12</span> &nbsp;<span>{{currencyConveterForm.controls['toCurrency'].value.name_full}}</span>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-loader *ngIf="isLoader"></app-loader>

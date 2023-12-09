@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg" id="main-navbar">
+  <div class="container-fluid">
+    <span [routerLink]="['/']"
+      class="logo">Crypto
+      World</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" id="m1" aria-current="page" [routerLink]="['/']" routerLinkActive='active'
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="m2" [routerLink]="[ '/currency-converter']" routerLinkActive='active'
+            [routerLinkActiveOptions]="{exact: true}">Currency Converter</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <img src="../assets/images/moon.svg" height="20" width="20" (click)="toggleNightMode()" *ngIf="!isNighMode"
+          style="cursor: pointer;">
+        <img src="../assets/images/sun.svg" height="20" width="20" (click)="toggleNightMode()" *ngIf="isNighMode"
+          style="cursor: pointer;">
+      </div>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

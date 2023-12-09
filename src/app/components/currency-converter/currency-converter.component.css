@@ -1,0 +1,26 @@
+.currency-converter-container {
+    height: 89.3vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.converter-container{
+    height: 40vh;
+    width: 66vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    box-shadow: rgba(35, 55, 80, 0.3) 0px 6px 12px;
+}
+
+
+.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+.no-spin {
+    -moz-appearance:textfield !important;
+}

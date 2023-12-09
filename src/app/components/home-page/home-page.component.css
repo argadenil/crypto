@@ -1,0 +1,18 @@
+.home-page-container {
+    height: 89.3vh;
+    width: 100vw;
+}
+
+td{
+    font-weight: bold;
+}
+
+.mat-mdc-header-row{
+    background-color: rgb(43, 46, 61) !important;
+    color: whitesmoke;
+}
+
+.mat-mdc-row, .mdc-data-table__content{
+    background-color: lightgray !important;
+    color: rgb(43, 46, 61);
+}
